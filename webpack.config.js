@@ -1,4 +1,7 @@
 const path = require("path");
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+
 
 module.exports = {
   entry: './src/index.js',
@@ -6,10 +9,22 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist")
   },
+
+  plugins:[
+    new MomentLocalesPlugin(),
+ 
+    // Or: To strip all locales except “en”, “es-us” and “ru”
+    // (“en” is built into Moment and can’t be removed)
+    new MomentLocalesPlugin({
+        localesToKeep: ['es-us', 'ru'],
+    }),
+    new ESLintPlugin('./.eslintrc.json')
+  ],
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     port: 9000
   },
+
   module: {
     rules: [{
         test: /\.js$/,

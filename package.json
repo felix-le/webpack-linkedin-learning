@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "Learning all about webpack 4",
   "main": "index.js",
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  },
   "scripts": {
     "build": "./node_modules/.bin/webpack -w",
     "start:dev": "./node_modules/.bin/webpack-dev-server"
@@ -29,9 +35,18 @@
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "bootstrap": "^4.5.3",
+    "eslint": "^7.16.0",
+    "eslint-webpack-plugin": "^2.4.1",
+    "i18next": "^19.8.4",
     "jquery": "^3.3.1",
+    "moment": "^2.29.1",
+    "moment-locales-webpack-plugin": "^1.2.0",
+    "popper.js": "^1.16.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-i18next": "^11.8.4",
     "sass": "^1.30.0",
     "sass-loader": "^10.1.0"
   }
