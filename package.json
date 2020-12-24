@@ -1,0 +1,16 @@
+{
+  "name": "webpack-linkedin-learning",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -w"
+  },
+  "repository": "https://github.com/vietanhcoder/webpack-linkedin-learning.git",
+  "author": "Viet Anh Le <mc.vietanh@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "webpack": "4.28.4",
+    "webpack-cli": "3.2.1"
+  }
+}
