@@ -1,15 +1,14 @@
 import React from 'react'
 import { render } from 'react-dom'
-const Greeting = () => {
+const About = () => {
 
   return(
     <>
-    <h1>Hello from React</h1>
-    <div id="image"></div>
+    <h1>Hello from About React</h1>
     </>
     )}
 
 render(
-    <Greeting />,
+    <About />,
     document.getElementById('target')
 )
