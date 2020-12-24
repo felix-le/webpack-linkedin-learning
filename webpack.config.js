@@ -1,8 +1,7 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports ={
-  entry:"./src/index.js",
+module.exports = {
+  entry: './src/index.js',
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist")
@@ -11,38 +10,49 @@ module.exports ={
     contentBase: path.join(__dirname, "dist"),
     port: 9000
   },
-
-  plugins: [
-    new HtmlWebpackPlugin()
-  ],
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         exclude: /(node_modules)/,
-        use:{
+        use: {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react']
           }
         }
       },
-
-      
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
+              sassOptions: {
+                outputStyle: "compressed",
+              },
+            },
+          },
+        ],
+      },
       {
         test: /\.css$/,
-        use: [
-          {loader: 'style-loader'},
-          {loader: 'css-loader'}
+        use: [{
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          }
         ]
       },
       {
         test: /\.(png|jpg)$/,
-        use:[
-          {loader: 'url-loader'}
-        ]
+        use: [{
+          loader: 'url-loader'
+        }]
       }
-
     ]
   }
 }

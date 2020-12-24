@@ -1,13 +1,15 @@
 import React from 'react'
 import { render } from 'react-dom'
-const Greeting = () => {
+import "./styles.scss";
 
-  return(
-    <>
-    <h1>Hello from React</h1>
-    <div id="image"></div>
-    </>
-    )}
+const Greeting = () => {
+    return (
+        <div>
+            <h1>Hello from React</h1>
+            <div id="image"></div>
+        </div>
+    )
+}
 
 render(
     <Greeting />,

@@ -1,12 +1,13 @@
 import React from 'react'
 import { render } from 'react-dom'
-const Contact = () => {
 
-  return(
-    <>
-    <h1>Hello from Contact</h1>
-    </>
-    )}
+const Contact = () => {
+    return (
+        <div>
+            <h1>Contact webpack</h1>
+        </div>
+    )
+}
 
 render(
     <Contact />,
